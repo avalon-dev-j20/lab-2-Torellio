@@ -27,8 +27,9 @@ public class Application {
      * Точка входа в приложение.
      *
      * @param args аргументы командной строки
+     * @throws java.lang.Exception
      */
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         /*
          * Задачи выполняются последовательно. В порядке,
          * определённом массивом tasks.
@@ -37,6 +38,11 @@ public class Application {
          * порядок и/или закомментировать любой из элементов
          * массива.
          */
-        for (Task task : tasks) task.run();
+        try {
+            for (Task task : tasks) task.run();
+        }
+        catch (Exception exp){
+            System.err.println("Exception");
+        }
     }
 }
